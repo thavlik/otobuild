@@ -1,6 +1,5 @@
 FROM golang:1.13
 
-ARG TOOLCHAIN=stable
 RUN apt-get update && \
     apt-get install -y \
         build-essential \
@@ -20,6 +19,7 @@ RUN mkdir -p ${CARGO_HOME} \
 
 USER root
 WORKDIR /go/src/github.com/pacedotdev/
+RUN ls -al
 RUN git clone https://github.com/thavlik/oto.git
 WORKDIR /go/src/github.com/pacedotdev/oto
 RUN go get -u ./...
