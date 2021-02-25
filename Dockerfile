@@ -19,7 +19,7 @@ RUN mkdir -p ${CARGO_HOME} \
 
 USER root
 WORKDIR /go/src/github.com/pacedotdev/
-RUN ls -al
+RUN echo asdcc
 RUN git clone https://github.com/thavlik/oto.git
 WORKDIR /go/src/github.com/pacedotdev/oto
 RUN go get -u ./...
